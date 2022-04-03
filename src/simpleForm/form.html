@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Sample</title>
+</head>
+<form method="POST" action="./form_output.php">
+    <!-- テキスト -->
+    <input type="text" name="text" placeholder="text">
+
+    <hr>
+
+    <!-- チェックボックス -->
+    <label for="Choice1">Choice1</label>
+    <input id="Choice1" type="checkbox" name="checkbox[]" value="choice1">
+    <label for="Choice2">Choice2</label>
+    <input id="Choice2" type="checkbox" name="checkbox[]" value="choice2">
+    <label for="Choice3">Choice3</label>
+    <input id="Choice3" type="checkbox" name="checkbox[]" value="choice3">
+
+    <hr>
+
+    <!-- ラジオボタン -->
+    <label for="Radio1">Radio1</label>
+    <input id="Radio1" type="radio" name="radio" value="radio1">
+    <label for="Radio2">Radio2</label>
+    <input id="Radio2" type="radio" name="radio" value="radio2">
+
+    <hr>
+
+    <!-- セレクトボックス -->
+    <select name="select">
+        <option value="select1">select1</option>
+        <option value="select2">select2</option>
+        <option value="select3">select3</option>
+        <option value="select4">select4</option>
+    </select>
+
+    <hr>
+
+    <input type="submit" value="送信">
+</form>
+</html>

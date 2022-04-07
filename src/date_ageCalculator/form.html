@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<div>
+    <h2>年齢を計算します。</h2>
+
+    <form action="result.php" method="post">
+        <h4>誕生日</h4>
+        <label for="birthYear">誕生年</label>
+        <input type="number" name="birthYear" id="birthYear">
+        <label for="birthMonth">誕生月</label>
+        <input type="number" name="birthMonth" id="birthMonth">
+        <label for="birthDay">誕生日</label>
+        <input type="number" name="birthDay" id="birthDay">
+
+        <hr>
+
+        <h4>基準日</h4>
+        <label for="currentYear">基準年</label>
+        <input type="number" name="currentYear" id="currentYear">
+        <label for="currentMonth">基準月</label>
+        <input type="number" name="currentMonth" id="currentMonth">
+        <label for="currentDay">基準日</label>
+        <input type="number" name="currentDay" id="currentDay">
+
+        <hr>
+
+        <input type="submit" value="送信">
+    </form>
+</div>
+</body>
+</html>

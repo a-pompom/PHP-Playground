@@ -1,0 +1,12 @@
+services:
+  php:
+    build:
+      context: "./php"
+      dockerfile: "${PWD}/php/Dockerfile"
+    volumes:
+      - type: bind
+        source: "${PWD}/../src"
+        target: "/home/src"
+      - type: bind
+        source: "${PWD}/../tests"
+        target: "/home/tests"

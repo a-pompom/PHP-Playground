@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PHPStormデフォルトの設定では、設定値cacheResultFileに対してコンテナとホストのpathMappingが機能しないようだ
+     これではキャッシュ用のディレクトリがつくれずエラーとなるので、コンテナ側のディレクトリを明示
+ -->
+<phpunit bootstrap="/home/app/vendor/autoload.php"
+         cacheResultFile="/home/app/.phpunit.result.cache"
+>
+
+</phpunit>

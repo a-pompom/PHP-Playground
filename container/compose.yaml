@@ -5,8 +5,5 @@ services:
       dockerfile: "${PWD}/php/Dockerfile"
     volumes:
       - type: bind
-        source: "${PWD}/../src"
-        target: "/home/src"
-      - type: bind
-        source: "${PWD}/../tests"
-        target: "/home/tests"
+        source: "${PWD}/../app"
+        target: "/home/app"

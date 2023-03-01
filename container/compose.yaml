@@ -1,9 +1,40 @@
 services:
+  mariadb:
+    build:
+      context: "${PWD}/mariadb"
+      dockerfile: "${PWD}/mariadb/Dockerfile"
+    env_file: "${PWD}/mariadb/.env"
+    ports:
+      - "3306:3306"
+    networks:
+      - php-network
+    volumes:
+      - type: volume
+        source: mariadb
+        target: /var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "--silent" ]
   php:
     build:
       context: "./php"
       dockerfile: "${PWD}/php/Dockerfile"
+    ports:
+      - "8000:8000"
+    networks:
+      - php-network
     volumes:
       - type: bind
         source: "${PWD}/../app"
         target: "/home/app"
+      - type: bind
+        source: "${PWD}/../app_laravel"
+        target: "/home/app_laravel"
+    # デフォルトでは待機するのはコンテナの起動までで、MariaDBが起動する前に動き始めてしまうので起動判定を別途定義した
+    depends_on:
+      mariadb:
+        condition: service_healthy
+networks:
+  php-network:
+    driver: bridge
+volumes:
+  mariadb:
